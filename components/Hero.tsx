@@ -13,11 +13,17 @@ const services = [
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden bg-[#111111]">
-      {/* Wallpaper background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/hero-bg.png)' }}
-      />
+      {/* Video background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/hero-bg.png"
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
       {/* Dark overlay so text stays legible */}
       <div className="absolute inset-0 bg-[#111111]/60" />
       {/* Yellow top accent */}
