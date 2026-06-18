@@ -36,7 +36,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -70,14 +70,16 @@ export default function Testimonials() {
 
         {/* Overall rating */}
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-3 bg-[#FFD400] rounded-2xl px-8 py-4">
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 text-[#111111] fill-[#111111]" />
-              ))}
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-[#FFD400] rounded-2xl px-6 sm:px-8 py-4 max-w-full">
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-[#111111] fill-[#111111]" />
+                ))}
+              </div>
+              <span className="font-black text-[#111111] text-lg">4.9</span>
             </div>
-            <span className="font-black text-[#111111] text-lg">4.9</span>
-            <span className="text-[#111111]/60 font-semibold text-sm">— Avaliação média de +500 clientes</span>
+            <span className="text-[#111111]/60 font-semibold text-sm text-center">— Avaliação média de +500 clientes</span>
           </div>
         </div>
       </div>

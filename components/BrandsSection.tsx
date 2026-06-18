@@ -17,11 +17,11 @@ export default function BrandsSection() {
           <h2 className="font-heading text-3xl md:text-4xl font-black text-[#111111]">Nossos Diferenciais</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {benefits.map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(20%-0.8rem)]"
             >
               <div className="w-14 h-14 bg-[#FFD400] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-sm">
                 <Icon className="w-7 h-7 text-[#111111]" />

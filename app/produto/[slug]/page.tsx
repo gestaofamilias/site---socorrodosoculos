@@ -23,7 +23,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <span className="text-brand-black font-medium">{productName}</span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
         {/* Product Images */}
         <div className="flex flex-col-reverse md:flex-row gap-4">
           {/* Thumbnails */}

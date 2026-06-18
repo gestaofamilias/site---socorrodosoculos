@@ -58,7 +58,7 @@ export default function RayBanAviatorProduct() {
           <span className="text-[#111111] font-medium">Ray-Ban Aviator Classic</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
           {/* Gallery */}
           <div className="flex flex-col-reverse md:flex-row gap-4">
             <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-y-auto md:w-24 flex-shrink-0">
@@ -230,8 +230,8 @@ export default function RayBanAviatorProduct() {
           )}
 
           {tab === 'especificacoes' && (
-            <div className="max-w-3xl mx-auto">
-              <table className="w-full text-sm">
+            <div className="max-w-3xl mx-auto overflow-x-auto">
+              <table className="w-full text-sm min-w-[480px]">
                 <tbody>
                   {[
                     ['Marca', 'Ray-Ban'],
@@ -245,7 +245,7 @@ export default function RayBanAviatorProduct() {
                     ['Acessórios inclusos', 'Estojo rígido, flanela de limpeza, certificado de garantia'],
                   ].map(([label, value], i) => (
                     <tr key={label} className={i % 2 === 0 ? 'bg-gray-50' : ''}>
-                      <td className="py-3 px-4 font-semibold text-[#111111] w-1/3">{label}</td>
+                      <td className="py-3 px-4 font-semibold text-[#111111] w-1/3 whitespace-nowrap">{label}</td>
                       <td className="py-3 px-4 text-gray-600">{value}</td>
                     </tr>
                   ))}
@@ -270,21 +270,21 @@ export default function RayBanAviatorProduct() {
 
               {reviews.map((review) => (
                 <div key={review.name} className="border-b border-gray-100 pb-6">
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-[#FFD400] flex items-center justify-center font-black text-[#111111] text-sm">
+                      <div className="w-9 h-9 rounded-full bg-[#FFD400] flex items-center justify-center font-black text-[#111111] text-sm flex-shrink-0">
                         {review.name.charAt(0)}
                       </div>
                       <span className="font-bold text-[#111111] text-sm">{review.name}</span>
                     </div>
                     <span className="text-xs text-gray-400">{review.date}</span>
                   </div>
-                  <div className="flex items-center gap-0.5 mb-2 ml-12">
+                  <div className="flex items-center gap-0.5 mb-2 sm:ml-12">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className={`w-3.5 h-3.5 ${i < review.rating ? 'text-[#FFD400] fill-[#FFD400]' : 'text-gray-200'}`} />
                     ))}
                   </div>
-                  <p className="text-gray-600 text-sm ml-12 leading-relaxed">{review.content}</p>
+                  <p className="text-gray-600 text-sm sm:ml-12 leading-relaxed">{review.content}</p>
                 </div>
               ))}
             </div>

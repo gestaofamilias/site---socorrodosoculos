@@ -19,8 +19,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top bar */}
-      <div className="bg-[#111111] text-white text-xs py-2 text-center font-medium tracking-wide">
-        ⚡ Frete grátis acima de R$&nbsp;299 &nbsp;|&nbsp; 📞 (41) 3385-2179 &nbsp;|&nbsp; Orçamento Gratuito
+      <div className="bg-[#111111] text-white text-[11px] sm:text-xs py-2 text-center font-medium tracking-wide px-2">
+        <span>⚡ Frete grátis acima de R$&nbsp;299</span>
+        <span className="hidden sm:inline"> &nbsp;|&nbsp; 📞 (41) 3385-2179 &nbsp;|&nbsp; Orçamento Gratuito</span>
       </div>
 
       {/* Main header — yellow */}
@@ -47,11 +48,11 @@ export default function Header() {
           </Link>
 
           {/* Search */}
-          <div className="hidden lg:flex flex-1 max-w-2xl relative ml-4">
+          <div className="hidden md:flex flex-1 max-w-2xl relative ml-2 md:ml-4 min-w-0">
             <input
               type="text"
               placeholder="Buscar óculos, serviços, consertos..."
-              className="w-full pl-5 pr-14 py-3 rounded-xl border-2 border-black/15 bg-white focus:outline-none focus:border-[#111111] transition font-medium placeholder:text-gray-400 shadow-sm text-sm"
+              className="w-full pl-4 md:pl-5 pr-12 md:pr-14 py-2.5 md:py-3 rounded-xl border-2 border-black/15 bg-white focus:outline-none focus:border-[#111111] transition font-medium placeholder:text-gray-400 shadow-sm text-sm"
             />
             <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#111111] text-[#FFD400] p-2 rounded-lg hover:bg-black transition hover:scale-105">
               <Search className="w-4 h-4" />
