@@ -1,9 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingCart, Star, Heart, Share2, Truck, ShieldCheck, CreditCard } from 'lucide-react';
+import RayBanAviatorProduct from '@/components/products/RayBanAviatorProduct';
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
+
+  if (resolvedParams.slug === 'oculos-de-sol-ray-ban-aviator-classic') {
+    return <RayBanAviatorProduct />;
+  }
+
   const productName = resolvedParams.slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 
   return (
