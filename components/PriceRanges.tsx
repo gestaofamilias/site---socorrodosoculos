@@ -54,25 +54,41 @@ export default function PriceRanges() {
         </div>
 
         {/* What we fix */}
-        <div className="bg-[#FFD400] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="font-heading font-black text-[#111111] text-2xl mb-4">O que consertamos</h3>
-            <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-              {['Troca de parafusos', 'Ajuste de armação', 'Soldas e reparos', 'Troca de plaquetas', 'Higienização completa', 'Troca de lentes'].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm font-semibold text-[#111111]">
-                  <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                  {item}
-                </div>
-              ))}
-            </div>
+        <div className="bg-[#FFD400] rounded-2xl p-8 md:p-10">
+          <h3 className="font-heading font-black text-[#111111] text-3xl mb-8">O que consertamos</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-5 mb-10">
+            {[
+              'Troca de parafusos',
+              'Ajuste de armação',
+              'Soldas em geral',
+              'Troca de plaquetas',
+              'Higienização completa',
+              'Troca de lentes',
+              'Troca de hastes',
+              'Troca de charneira/dobradiça',
+              'Polimento de lentes',
+              'Ponteiras de silicone',
+              'Pintura e reforço de armação',
+              'Troca de nylon (sem aro)',
+              'Ajuste de plaquetas nasais',
+              'Conserto de óculos esportivos',
+              'Troca de elástico/cordão',
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-3 text-base font-semibold text-[#111111]">
+                <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                {item}
+              </div>
+            ))}
           </div>
-          <Link
-            href="/contato"
-            className="inline-flex items-center gap-2 bg-[#111111] text-[#FFD400] font-black px-8 py-4 rounded-xl hover:bg-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-lg text-base flex-shrink-0"
-          >
-            Solicitar Orçamento
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+          <div className="flex justify-center md:justify-end">
+            <Link
+              href="/contato"
+              className="inline-flex items-center gap-2 bg-[#111111] text-[#FFD400] font-black px-10 py-4 rounded-xl hover:bg-[#1A1A1A] transition-all duration-200 hover:scale-105 hover:shadow-lg text-base"
+            >
+              Solicitar Orçamento
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

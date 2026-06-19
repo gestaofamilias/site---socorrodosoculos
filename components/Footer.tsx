@@ -26,6 +26,14 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-[#FFD400] flex-shrink-0 mt-0.5" />
                 <span>Rua Dona Izabel A Redentora, 1984 — Centro, São José dos Pinhais - PR</span>
               </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#FFD400] flex-shrink-0 mt-0.5" />
+                <span>Av. Vitório do Amaral, 1200 — Centro, Araucária - PR</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#FFD400] flex-shrink-0 mt-0.5" />
+                <span>Av. Nereu Ramos, 850 — Centro, Itapema - SC</span>
+              </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#FFD400] flex-shrink-0" />
                 <span>(41) 3385-2179</span>
@@ -34,6 +42,15 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-[#FFD400] flex-shrink-0" />
                 <span>contato@socorrodooculos.com.br</span>
               </div>
+              <a
+                href="https://instagram.com/socorrodooculos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-[#FFD400] transition-colors w-fit"
+              >
+                <Instagram className="w-4 h-4 text-[#FFD400] flex-shrink-0" />
+                <span>@socorrodooculos</span>
+              </a>
             </div>
           </div>
 
@@ -99,12 +116,14 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               {[
                 { icon: Facebook, href: '#' },
-                { icon: Instagram, href: '#' },
+                { icon: Instagram, href: 'https://instagram.com/socorrodooculos' },
                 { icon: Youtube, href: '#' },
               ].map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}
                   href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="w-9 h-9 rounded-xl bg-[#1A1A1A] border border-white/10 flex items-center justify-center text-[#FFD400] hover:bg-[#FFD400] hover:text-[#111111] hover:border-[#FFD400] transition-all duration-200 hover:scale-110"
                 >
                   <Icon className="w-4 h-4" />

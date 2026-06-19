@@ -121,7 +121,7 @@ export default function Hero() {
                 </div>
                 <div className="w-px h-10 bg-black/15" />
                 <div className="text-center">
-                  <div className="font-black text-[#111111] text-xl sm:text-2xl leading-none">24h</div>
+                  <div className="font-black text-[#111111] text-xl sm:text-2xl leading-none">1h</div>
                   <div className="text-[#111111]/60 text-[9px] sm:text-[10px] font-semibold mt-0.5">Prazo Médio</div>
                 </div>
               </div>

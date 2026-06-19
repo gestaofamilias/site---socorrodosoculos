@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'motion/react';
-import { MapPin, Clock, ArrowUpRight } from 'lucide-react';
+import { MapPin, Clock, Phone, ArrowUpRight } from 'lucide-react';
 
 const stores = [
   {
@@ -10,21 +10,27 @@ const stores = [
     state: 'PR',
     address: 'Rua Dona Izabel A Redentora, 1984 - Centro',
     hours: 'Seg a Sáb: 09h às 18h',
+    phone: '(41) 3385-2179',
     image: 'https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&q=80&w=600&h=500',
+    gmbQuery: 'Socorro dos Óculos, Rua Dona Izabel A Redentora, 1984, São José dos Pinhais - PR',
   },
   {
     city: 'Araucária',
     state: 'PR',
     address: 'Av. Vitório do Amaral, 1200 - Centro',
     hours: 'Seg a Sáb: 09h às 18h',
+    phone: '(41) 3552-8890',
     image: 'https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&q=80&w=600&h=500',
+    gmbQuery: 'Socorro dos Óculos, Av. Vitório do Amaral, 1200, Araucária - PR',
   },
   {
     city: 'Itapema',
     state: 'SC',
     address: 'Av. Nereu Ramos, 850 - Centro',
     hours: 'Seg a Sáb: 09h às 19h',
+    phone: '(47) 3368-4421',
     image: 'https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=600&h=500',
+    gmbQuery: 'Socorro dos Óculos, Av. Nereu Ramos, 850, Itapema - SC',
   },
 ];
 
@@ -48,14 +54,18 @@ export default function StoreLocations() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {stores.map((store, index) => (
-            <motion.div
+            <motion.a
               key={store.city}
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(store.gmbQuery)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ver loja de ${store.city} no Google Maps`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
               whileHover={{ y: -8 }}
-              className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-[#0057FF]/20 transition-shadow duration-300 h-80"
+              className="group relative block rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-[#FFD400]/20 transition-shadow duration-300 h-80 cursor-pointer"
             >
               <Image
                 src={store.image}
@@ -67,7 +77,7 @@ export default function StoreLocations() {
               />
 
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#0057FF]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent" />
 
               {/* Pulsing pin badge */}
               <motion.div
@@ -86,20 +96,24 @@ export default function StoreLocations() {
                 <h3 className="font-heading font-black text-white text-2xl mb-2 leading-tight">
                   {store.city}
                 </h3>
-                <p className="text-blue-100 text-sm mb-2 flex items-start gap-2">
+                <p className="text-gray-200 text-sm mb-2 flex items-start gap-2">
                   <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#FFD400]" />
                   {store.address}
                 </p>
-                <p className="text-blue-100/80 text-xs mb-4 flex items-center gap-2">
+                <p className="text-gray-300 text-xs mb-1 flex items-center gap-2">
                   <Clock className="w-3.5 h-3.5 flex-shrink-0 text-[#FFD400]" />
                   {store.hours}
                 </p>
+                <span className="text-gray-300 text-xs mb-4 flex items-center gap-2 w-fit">
+                  <Phone className="w-3.5 h-3.5 flex-shrink-0 text-[#FFD400]" />
+                  {store.phone}
+                </span>
 
                 <span className="inline-flex items-center gap-1 text-xs font-bold text-white opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                  Ver no mapa <ArrowUpRight className="w-3.5 h-3.5" />
+                  Ver no Google Maps <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

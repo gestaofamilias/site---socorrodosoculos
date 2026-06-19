@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { CheckCircle2, Users, Award, Heart } from 'lucide-react';
+import Link from 'next/link';
+import { CheckCircle2, Users, Award, Heart, MessageCircle, ArrowRight } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -30,7 +31,7 @@ export default function AboutPage() {
             <div className="flex-1 space-y-6">
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-brand-black mb-8">Mais que uma ótica, cuidamos da sua visão.</h2>
               <p className="text-gray-700 text-lg leading-relaxed">
-                Fundada em 2010, a Socorro do Óculos começou como uma pequena loja de bairro. Com o passar dos anos, nossa dedicação em oferecer o melhor para nossos clientes nos fez crescer e expandir para o mundo digital.
+                Fundada em 2003, a Socorro do Óculos começou como uma pequena loja de bairro. Com o passar dos anos, nossa dedicação em oferecer o melhor para nossos clientes nos fez crescer e expandir para o mundo digital.
               </p>
               <p className="text-gray-700 text-lg leading-relaxed">
                 Acreditamos que enxergar bem não deve ser um luxo. Por isso, trabalhamos incansavelmente para trazer as melhores marcas, tecnologias de lentes avançadas e armações que acompanham as últimas tendências de moda, tudo isso com condições acessíveis.
@@ -50,7 +51,7 @@ export default function AboutPage() {
                 />
               </div>
               <div className="absolute -bottom-8 -left-8 bg-brand-yellow p-8 rounded-2xl shadow-xl hidden md:block">
-                <p className="font-heading text-4xl font-bold text-brand-black mb-2">+10 Anos</p>
+                <p className="font-heading text-4xl font-bold text-brand-black mb-2">+23 Anos</p>
                 <p className="text-brand-black font-medium">de experiência no mercado</p>
               </div>
             </div>
@@ -100,6 +101,48 @@ export default function AboutPage() {
               <h3 className="font-heading font-bold text-xl text-brand-black mb-4">Paixão</h3>
               <p className="text-gray-600">Amamos o que fazemos e isso se reflete no cuidado com cada detalhe do nosso trabalho.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WhatsApp CTA Banner */}
+      <section className="relative py-16 bg-[#111111] overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.06]"
+          style={{ backgroundImage: 'radial-gradient(circle, #FFD400 1px, transparent 1px)', backgroundSize: '28px 28px' }}
+        />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#25D366]/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-brand-yellow" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 max-w-4xl mx-auto text-center lg:text-left">
+            <div className="flex items-center gap-5">
+              <div className="relative flex-shrink-0">
+                <div className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping" />
+                <div className="relative w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center shadow-[0_0_30px_rgba(37,211,102,0.5)]">
+                  <MessageCircle className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              <div className="text-left">
+                <h2 className="font-heading text-2xl md:text-3xl font-black text-white mb-1">
+                  Precisa de ajuda agora?
+                </h2>
+                <p className="text-gray-400 text-sm md:text-base">
+                  Fale com a gente no WhatsApp e receba atendimento rápido e personalizado.
+                </p>
+              </div>
+            </div>
+
+            <Link
+              href="https://wa.me/5541933852179?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20conserto%20de%20%C3%B3culos."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white font-black px-8 py-4 rounded-xl hover:bg-[#1EBE57] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(37,211,102,0.4)] text-base flex-shrink-0"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Conversar no WhatsApp
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
