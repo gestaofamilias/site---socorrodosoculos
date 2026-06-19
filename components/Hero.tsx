@@ -54,7 +54,9 @@ export default function Hero() {
                 <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#FFD400]/40 rounded" />
               </span>
               <br />
-              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">NÓS SALVAMOS ELE.</span>
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+                NÓS TEMOS A <span className="text-[#FFD400]">SOLUÇÃO!</span>
+              </span>
             </h1>
 
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
@@ -109,7 +111,7 @@ export default function Hero() {
               {/* Stats bar */}
               <div className="bg-[#FFD400] rounded-2xl p-3 sm:p-4 flex items-center justify-around shadow-[0_0_30px_rgba(255,212,0,0.35)]">
                 <div className="text-center">
-                  <div className="font-black text-[#111111] text-xl sm:text-2xl leading-none">+5000</div>
+                  <div className="font-black text-[#111111] text-xl sm:text-2xl leading-none">200k</div>
                   <div className="text-[#111111]/60 text-[9px] sm:text-[10px] font-semibold mt-0.5">Óculos Recuperados</div>
                 </div>
                 <div className="w-px h-10 bg-black/15" />
