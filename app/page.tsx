@@ -5,6 +5,7 @@ import BrandsSection from '@/components/BrandsSection';
 import PriceRanges from '@/components/PriceRanges';
 import PromoBanner from '@/components/PromoBanner';
 import Testimonials from '@/components/Testimonials';
+import StoreLocations from '@/components/StoreLocations';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <PriceRanges />
       <PromoBanner />
       <Testimonials />
+      <StoreLocations />
     </>
   );
 }
