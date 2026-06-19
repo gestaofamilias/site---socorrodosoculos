@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { Search, ShoppingCart, User, Menu, Phone, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 const navLinks = [
   ['Óculos de Grau', '/categoria/oculos-de-grau'],
@@ -13,15 +14,47 @@ const navLinks = [
   ['Sobre', '/sobre'],
 ];
 
+const branches = [
+  { name: 'São José dos Pinhais', phone: '(41) 3385-2179' },
+  { name: 'Araucária', phone: '(41) 3552-8890' },
+  { name: 'Itapema', phone: '(47) 3368-4421' },
+];
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [branchIndex, setBranchIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBranchIndex((i) => (i + 1) % branches.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const activeBranch = branches[branchIndex];
 
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top bar */}
-      <div className="bg-[#FFD400] text-[#111111] text-[11px] sm:text-xs py-2 text-center font-bold tracking-wide px-2">
+      <div className="bg-[#FFD400] text-[#111111] text-[11px] sm:text-xs py-2 text-center font-bold tracking-wide px-2 flex items-center justify-center gap-1 flex-wrap">
         <span>⚡ Frete grátis acima de R$&nbsp;299</span>
-        <span className="hidden sm:inline"> &nbsp;|&nbsp; 📞 (41) 3385-2179 &nbsp;|&nbsp; Orçamento Gratuito</span>
+        <span className="hidden sm:inline">&nbsp;|&nbsp;</span>
+        <span className="hidden sm:inline-flex items-center gap-1.5">
+          <Phone className="w-3 h-3" />
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={activeBranch.name}
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.3 }}
+              className="inline-block"
+            >
+              {activeBranch.name}: {activeBranch.phone}
+            </motion.span>
+          </AnimatePresence>
+        </span>
+        <span className="hidden sm:inline">&nbsp;|&nbsp; Orçamento Gratuito</span>
       </div>
 
       {/* Main header — black premium */}
