@@ -59,41 +59,44 @@ export default function Header() {
 
       {/* Main header — black premium */}
       <div className="bg-[#111111] shadow-lg border-b border-white/10">
-        <div className="container mx-auto px-4 py-3 flex items-center gap-4">
-          {/* Mobile menu toggle */}
-          <button
-            className="lg:hidden p-2 text-[#FFD400] hover:bg-white/5 rounded-lg transition"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menu"
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0 group">
-            <div className="w-10 h-10 bg-[#FFD400] rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(255,212,0,0.4)]">
-              <span className="text-[#111111] font-black text-lg font-heading">S</span>
-            </div>
-            <div className="hidden sm:block leading-tight">
-              <span className="font-heading font-black text-white text-lg block leading-none">Socorro</span>
-              <span className="font-heading font-semibold text-[#FFD400] text-xs block">dos Óculos</span>
-            </div>
-          </Link>
-
-          {/* Search */}
-          <div className="hidden md:flex flex-1 max-w-2xl relative ml-2 md:ml-4 min-w-0">
-            <input
-              type="text"
-              placeholder="Buscar óculos, serviços, consertos..."
-              className="w-full pl-4 md:pl-5 pr-12 md:pr-14 py-2.5 md:py-3 rounded-xl border-2 border-white/10 bg-[#1A1A1A] focus:outline-none focus:border-[#FFD400] transition font-medium placeholder:text-gray-500 text-sm text-white"
-            />
-            <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#FFD400] text-[#111111] p-2 rounded-lg hover:bg-[#FFC107] transition hover:scale-105">
-              <Search className="w-4 h-4" />
+        <div className="container mx-auto px-4 py-3 grid grid-cols-[auto_1fr_auto] items-center gap-4">
+          {/* Mobile menu toggle + Logo */}
+          <div className="flex items-center gap-3">
+            <button
+              className="lg:hidden p-2 text-[#FFD400] hover:bg-white/5 rounded-lg transition"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Menu"
+            >
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
+
+            <Link href="/" className="flex items-center gap-2 flex-shrink-0 group">
+              <div className="w-10 h-10 bg-[#FFD400] rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(255,212,0,0.4)]">
+                <span className="text-[#111111] font-black text-lg font-heading">S</span>
+              </div>
+              <div className="hidden sm:block leading-tight">
+                <span className="font-heading font-black text-white text-lg block leading-none">Socorro</span>
+                <span className="font-heading font-semibold text-[#FFD400] text-xs block">dos Óculos</span>
+              </div>
+            </Link>
+          </div>
+
+          {/* Search — centered */}
+          <div className="hidden md:flex justify-center min-w-0">
+            <div className="relative w-full max-w-md">
+              <input
+                type="text"
+                placeholder="Buscar óculos, serviços, consertos..."
+                className="w-full pl-4 md:pl-5 pr-12 md:pr-14 py-2.5 md:py-3 rounded-xl border-2 border-white/10 bg-[#1A1A1A] focus:outline-none focus:border-[#FFD400] transition font-medium placeholder:text-gray-500 text-sm text-white"
+              />
+              <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#FFD400] text-[#111111] p-2 rounded-lg hover:bg-[#FFC107] transition hover:scale-105">
+                <Search className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-3 sm:gap-4 ml-auto">
+          <div className="flex items-center gap-3 sm:gap-4 justify-end">
             <Link href="/contato" className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-white hover:text-[#FFD400] transition">
               <Phone className="w-4 h-4" />
               <span className="hidden xl:block">Atendimento</span>
