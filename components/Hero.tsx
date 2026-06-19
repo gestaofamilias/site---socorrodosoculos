@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, Wrench, Eye, Sparkles, CheckCircle, Zap } from 'lucide-react';
+import CrackedText from './CrackedText';
 
 const services = [
   { icon: Wrench, title: 'Conserto & Solda', desc: 'Armações e hastes' },
@@ -49,10 +50,7 @@ export default function Hero() {
 
             <h1 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] sm:leading-[1.05] mb-6">
               SEU ÓCULOS{' '}
-              <span className="text-[#FFD400] relative">
-                QUEBROU?
-                <span className="absolute -bottom-1 left-0 right-0 h-1 bg-[#FFD400]/40 rounded" />
-              </span>
+              <CrackedText text="QUEBROU?" className="text-[#FFD400]" />
               <br />
               <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                 NÓS TEMOS A <span className="text-[#FFD400]">SOLUÇÃO!</span>
