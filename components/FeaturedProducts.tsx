@@ -47,12 +47,12 @@ export default function FeaturedProducts() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-4">
           <div>
-            <span className="text-[#0057FF] text-xs font-black uppercase tracking-widest mb-1 block">Mais vendidos</span>
-            <h2 className="font-heading text-3xl md:text-4xl font-black text-[#0F172A]">Produtos em Destaque</h2>
+            <span className="text-[#FFC107] text-xs font-black uppercase tracking-widest mb-1 block">Mais vendidos</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-black text-[#111111]">Produtos em Destaque</h2>
           </div>
           <Link
             href="/promocoes"
-            className="inline-flex items-center gap-2 border-2 border-[#0057FF] text-[#0057FF] font-bold px-6 py-3 rounded-xl hover:bg-[#0057FF] hover:text-white transition-all duration-200 text-sm"
+            className="inline-flex items-center gap-2 border-2 border-[#111111] text-[#111111] font-bold px-6 py-3 rounded-xl hover:bg-[#111111] hover:text-[#FFD400] transition-all duration-200 text-sm"
           >
             Ver todos <ArrowRight className="w-4 h-4" />
           </Link>

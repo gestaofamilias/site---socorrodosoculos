@@ -26,11 +26,11 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-[#F4F8FF]">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
-          <span className="text-[#0057FF] text-xs font-black uppercase tracking-widest mb-2 block">Avaliações reais</span>
-          <h2 className="font-heading text-3xl md:text-4xl font-black text-[#0F172A] mb-3">O que nossos clientes dizem</h2>
+          <span className="text-[#FFC107] text-xs font-black uppercase tracking-widest mb-2 block">Avaliações reais</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-black text-[#111111] mb-3">O que nossos clientes dizem</h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm leading-relaxed">
             A satisfação dos nossos clientes é a nossa maior prioridade.
           </p>
@@ -40,9 +40,9 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-100 shadow-sm p-8 rounded-2xl relative hover:shadow-xl hover:shadow-[#0057FF]/10 hover:-translate-y-1 transition-all duration-300"
+              className="bg-white border border-gray-100 shadow-sm p-8 rounded-2xl relative hover:shadow-xl hover:shadow-[#FFD400]/15 hover:-translate-y-1 transition-all duration-300"
             >
-              <Quote className="w-8 h-8 text-[#0057FF]/20 mb-4" />
+              <Quote className="w-8 h-8 text-[#FFD400]/30 mb-4" />
 
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
@@ -57,10 +57,10 @@ export default function Testimonials() {
 
               <div className="flex items-center gap-3 mt-auto">
                 <div className="w-10 h-10 rounded-full bg-[#FFD400] flex items-center justify-center flex-shrink-0">
-                  <span className="font-black text-[#0F172A] text-sm">{testimonial.initial}</span>
+                  <span className="font-black text-[#111111] text-sm">{testimonial.initial}</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#0057FF] text-sm">{testimonial.name}</h4>
+                  <h4 className="font-bold text-[#111111] text-sm">{testimonial.name}</h4>
                   <span className="text-xs text-gray-400">{testimonial.role}</span>
                 </div>
               </div>
@@ -70,16 +70,16 @@ export default function Testimonials() {
 
         {/* Overall rating */}
         <div className="mt-12 text-center">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-[#FFD400] rounded-2xl px-6 sm:px-8 py-4 max-w-full">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-[#FFD400] rounded-2xl px-6 sm:px-8 py-4 max-w-full shadow-[0_0_25px_rgba(255,212,0,0.25)]">
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-[#0F172A] fill-[#0F172A]" />
+                  <Star key={i} className="w-5 h-5 text-[#111111] fill-[#111111]" />
                 ))}
               </div>
-              <span className="font-black text-[#0F172A] text-lg">4.9</span>
+              <span className="font-black text-[#111111] text-lg">4.9</span>
             </div>
-            <span className="text-[#0F172A]/60 font-semibold text-sm text-center">— Avaliação média de +500 clientes</span>
+            <span className="text-[#111111]/60 font-semibold text-sm text-center">— Avaliação média de +500 clientes</span>
           </div>
         </div>
       </div>

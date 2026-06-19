@@ -39,8 +39,8 @@ export default function StoreLocations() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <span className="text-[#0057FF] text-xs font-black uppercase tracking-widest mb-2 block">Onde estamos</span>
-          <h2 className="font-heading text-3xl md:text-4xl font-black text-[#0F172A] mb-3">Nossas Lojas</h2>
+          <span className="text-[#FFC107] text-xs font-black uppercase tracking-widest mb-2 block">Onde estamos</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-black text-[#111111] mb-3">Nossas Lojas</h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm leading-relaxed">
             Visite uma das nossas unidades e conte com atendimento especializado pessoalmente.
           </p>
@@ -67,7 +67,7 @@ export default function StoreLocations() {
               />
 
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0057FF]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#0057FF]/30 to-transparent" />
 
               {/* Pulsing pin badge */}
               <motion.div
@@ -75,12 +75,12 @@ export default function StoreLocations() {
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute top-5 right-5 w-11 h-11 bg-[#FFD400] rounded-full flex items-center justify-center shadow-lg"
               >
-                <MapPin className="w-5 h-5 text-[#0F172A]" />
+                <MapPin className="w-5 h-5 text-[#111111]" />
               </motion.div>
 
               {/* Content */}
               <div className="absolute bottom-0 left-0 w-full p-6">
-                <span className="inline-block bg-[#FFD400] text-[#0F172A] text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full mb-3">
+                <span className="inline-block bg-[#FFD400] text-[#111111] text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full mb-3">
                   {store.state}
                 </span>
                 <h3 className="font-heading font-black text-white text-2xl mb-2 leading-tight">
