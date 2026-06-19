@@ -2,8 +2,10 @@
 
 @theme {
   --color-brand-yellow: #FFD400;
-  --color-brand-black: #111111;
+  --color-brand-blue: #0057FF;
+  --color-brand-black: #0F172A;
   --color-brand-white: #FFFFFF;
+  --color-brand-soft: #F4F8FF;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }

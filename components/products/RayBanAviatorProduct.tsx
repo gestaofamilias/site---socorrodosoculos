@@ -55,7 +55,7 @@ export default function RayBanAviatorProduct() {
           <span className="mx-2">/</span>
           <Link href="/categoria/oculos-de-sol" className="hover:text-[#FFD400]">Óculos de Sol</Link>
           <span className="mx-2">/</span>
-          <span className="text-[#111111] font-medium">Ray-Ban Aviator Classic</span>
+          <span className="text-[#0F172A] font-medium">Ray-Ban Aviator Classic</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
@@ -88,7 +88,7 @@ export default function RayBanAviatorProduct() {
               <button className="absolute top-4 right-4 z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 shadow-sm transition-all duration-200 hover:scale-110">
                 <Heart className="w-5 h-5" />
               </button>
-              <button className="absolute top-16 right-4 z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-400 hover:text-[#111111] shadow-sm transition-all duration-200 hover:scale-110">
+              <button className="absolute top-16 right-4 z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center text-gray-400 hover:text-[#0F172A] shadow-sm transition-all duration-200 hover:scale-110">
                 <Share2 className="w-4 h-4" />
               </button>
 
@@ -111,11 +111,11 @@ export default function RayBanAviatorProduct() {
           {/* Info */}
           <div className="flex flex-col">
             <div className="mb-2 flex items-center gap-2">
-              <span className="bg-[#FFD400]/20 text-[#111111] text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Mais Vendido</span>
+              <span className="bg-[#FFD400]/20 text-[#0F172A] text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Mais Vendido</span>
               <span className="text-sm text-gray-500">Cód: RB3025-AVT</span>
             </div>
 
-            <h1 className="font-heading text-3xl md:text-4xl font-black text-[#111111] mb-4 leading-tight">
+            <h1 className="font-heading text-3xl md:text-4xl font-black text-[#0F172A] mb-4 leading-tight">
               Óculos de Sol Ray-Ban Aviator Classic
             </h1>
 
@@ -131,10 +131,10 @@ export default function RayBanAviatorProduct() {
             <div className="mb-8">
               <div className="flex items-end gap-3 mb-2">
                 <span className="text-gray-400 line-through text-lg">R$ 1.250,00</span>
-                <span className="text-4xl font-black text-[#111111]">R$ 850,00</span>
+                <span className="text-4xl font-black text-[#0057FF]">R$ 850,00</span>
               </div>
               <p className="text-gray-600">
-                ou em até <strong className="text-[#111111]">10x de R$ 85,00</strong> sem juros no cartão
+                ou em até <strong className="text-[#0F172A]">10x de R$ 85,00</strong> sem juros no cartão
               </p>
               <div className="mt-2 text-sm text-green-600 font-medium flex items-center gap-1">
                 <CreditCard className="w-4 h-4" />
@@ -144,7 +144,7 @@ export default function RayBanAviatorProduct() {
 
             {/* Color */}
             <div className="mb-8">
-              <h3 className="font-semibold text-[#111111] mb-3">
+              <h3 className="font-semibold text-[#0F172A] mb-3">
                 Cor: <span className="font-normal text-gray-600">{color === 'dourado' ? 'Dourado / Verde G15' : color === 'preto' ? 'Preto Fosco' : 'Prata / Azul'}</span>
               </h3>
               <div className="flex items-center gap-3">
@@ -157,11 +157,11 @@ export default function RayBanAviatorProduct() {
             {/* Add to cart */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <div className="flex items-center border border-gray-300 rounded-xl h-14 w-full sm:w-32">
-                <button onClick={() => setQty(Math.max(1, qty - 1))} className="w-10 h-full flex items-center justify-center text-gray-500 hover:text-[#111111] hover:bg-gray-50 rounded-l-xl text-xl transition-colors">-</button>
-                <input type="text" value={qty} readOnly className="w-full h-full text-center font-semibold text-[#111111] focus:outline-none" />
-                <button onClick={() => setQty(qty + 1)} className="w-10 h-full flex items-center justify-center text-gray-500 hover:text-[#111111] hover:bg-gray-50 rounded-r-xl text-xl transition-colors">+</button>
+                <button onClick={() => setQty(Math.max(1, qty - 1))} className="w-10 h-full flex items-center justify-center text-gray-500 hover:text-[#0F172A] hover:bg-gray-50 rounded-l-xl text-xl transition-colors">-</button>
+                <input type="text" value={qty} readOnly className="w-full h-full text-center font-semibold text-[#0F172A] focus:outline-none" />
+                <button onClick={() => setQty(qty + 1)} className="w-10 h-full flex items-center justify-center text-gray-500 hover:text-[#0F172A] hover:bg-gray-50 rounded-r-xl text-xl transition-colors">+</button>
               </div>
-              <button className="flex-1 bg-[#111111] text-[#FFD400] font-black text-lg rounded-xl h-14 flex items-center justify-center gap-2 hover:bg-[#FFD400] hover:text-[#111111] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]">
+              <button className="flex-1 bg-[#FFD400] text-[#0F172A] font-black text-lg rounded-xl h-14 flex items-center justify-center gap-2 hover:bg-[#0057FF] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]">
                 <ShoppingCart className="w-6 h-6" />
                 Comprar Agora
               </button>
@@ -169,13 +169,13 @@ export default function RayBanAviatorProduct() {
 
             {/* Shipping */}
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 mb-8">
-              <div className="flex items-center gap-2 mb-4 font-semibold text-[#111111]">
+              <div className="flex items-center gap-2 mb-4 font-semibold text-[#0F172A]">
                 <Truck className="w-5 h-5 text-[#FFD400]" />
                 Calcular Frete e Prazo
               </div>
               <div className="flex gap-2">
                 <input type="text" placeholder="Digite seu CEP" className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-[#FFD400] focus:ring-1 focus:ring-[#FFD400] transition-colors" />
-                <button className="bg-[#111111] text-[#FFD400] font-semibold px-6 py-2 rounded-lg hover:bg-black transition-all duration-200 hover:scale-105">Calcular</button>
+                <button className="bg-[#0057FF] text-white font-semibold px-6 py-2 rounded-lg hover:bg-[#0F172A] transition-all duration-200 hover:scale-105">Calcular</button>
               </div>
             </div>
 
@@ -200,7 +200,7 @@ export default function RayBanAviatorProduct() {
               <button
                 key={key}
                 onClick={() => setTab(key)}
-                className={`text-base md:text-lg font-heading font-bold pb-4 px-2 whitespace-nowrap transition-colors ${tab === key ? 'text-[#111111] border-b-4 border-[#FFD400]' : 'text-gray-400 hover:text-[#111111]'}`}
+                className={`text-base md:text-lg font-heading font-bold pb-4 px-2 whitespace-nowrap transition-colors ${tab === key ? 'text-[#0F172A] border-b-4 border-[#FFD400]' : 'text-gray-400 hover:text-[#0F172A]'}`}
               >
                 {label}
               </button>
@@ -245,7 +245,7 @@ export default function RayBanAviatorProduct() {
                     ['Acessórios inclusos', 'Estojo rígido, flanela de limpeza, certificado de garantia'],
                   ].map(([label, value], i) => (
                     <tr key={label} className={i % 2 === 0 ? 'bg-gray-50' : ''}>
-                      <td className="py-3 px-4 font-semibold text-[#111111] w-1/3 whitespace-nowrap">{label}</td>
+                      <td className="py-3 px-4 font-semibold text-[#0F172A] w-1/3 whitespace-nowrap">{label}</td>
                       <td className="py-3 px-4 text-gray-600">{value}</td>
                     </tr>
                   ))}
@@ -257,7 +257,7 @@ export default function RayBanAviatorProduct() {
           {tab === 'avaliacoes' && (
             <div id="avaliacoes" className="max-w-3xl mx-auto space-y-6">
               <div className="flex items-center gap-4 bg-gray-50 rounded-2xl p-6 mb-8">
-                <span className="text-5xl font-black text-[#111111]">4.8</span>
+                <span className="text-5xl font-black text-[#0F172A]">4.8</span>
                 <div>
                   <div className="flex items-center gap-1 mb-1">
                     {[...Array(5)].map((_, i) => (
@@ -272,10 +272,10 @@ export default function RayBanAviatorProduct() {
                 <div key={review.name} className="border-b border-gray-100 pb-6">
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-[#FFD400] flex items-center justify-center font-black text-[#111111] text-sm flex-shrink-0">
+                      <div className="w-9 h-9 rounded-full bg-[#FFD400] flex items-center justify-center font-black text-[#0F172A] text-sm flex-shrink-0">
                         {review.name.charAt(0)}
                       </div>
-                      <span className="font-bold text-[#111111] text-sm">{review.name}</span>
+                      <span className="font-bold text-[#0F172A] text-sm">{review.name}</span>
                     </div>
                     <span className="text-xs text-gray-400">{review.date}</span>
                   </div>
@@ -293,13 +293,13 @@ export default function RayBanAviatorProduct() {
 
         {/* FAQ */}
         <div className="mt-16 max-w-3xl mx-auto">
-          <h2 className="font-heading text-2xl font-black text-[#111111] mb-6 text-center">Perguntas Frequentes</h2>
+          <h2 className="font-heading text-2xl font-black text-[#0F172A] mb-6 text-center">Perguntas Frequentes</h2>
           <div className="space-y-3">
             {faqs.map((faq, i) => (
               <div key={faq.q} className="border border-gray-100 rounded-xl overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-5 text-left font-semibold text-[#111111] hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 text-left font-semibold text-[#0F172A] hover:bg-gray-50 transition-colors"
                 >
                   {faq.q}
                   <ChevronDown className={`w-5 h-5 text-[#FFD400] flex-shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
@@ -313,7 +313,7 @@ export default function RayBanAviatorProduct() {
         </div>
 
         {/* Why buy from us */}
-        <div className="mt-16 bg-[#111111] rounded-2xl p-8 md:p-10">
+        <div className="mt-16 bg-gradient-to-br from-[#0F172A] to-[#0057FF] rounded-2xl p-8 md:p-10">
           <h2 className="font-heading text-2xl font-black text-white mb-6 text-center">Por que comprar na Socorro dos Óculos?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -332,7 +332,7 @@ export default function RayBanAviatorProduct() {
 
         {/* Related products */}
         <div className="mt-16">
-          <h2 className="font-heading text-2xl md:text-3xl font-black text-[#111111] mb-8 text-center">Você também pode gostar</h2>
+          <h2 className="font-heading text-2xl md:text-3xl font-black text-[#0F172A] mb-8 text-center">Você também pode gostar</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {relatedProducts.map((product) => (
               <ProductCard key={product.id} product={product} />

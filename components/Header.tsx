@@ -19,17 +19,17 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top bar */}
-      <div className="bg-[#111111] text-white text-[11px] sm:text-xs py-2 text-center font-medium tracking-wide px-2">
+      <div className="bg-[#0F172A] text-white text-[11px] sm:text-xs py-2 text-center font-medium tracking-wide px-2">
         <span>⚡ Frete grátis acima de R$&nbsp;299</span>
         <span className="hidden sm:inline"> &nbsp;|&nbsp; 📞 (41) 3385-2179 &nbsp;|&nbsp; Orçamento Gratuito</span>
       </div>
 
-      {/* Main header — yellow */}
-      <div className="bg-[#FFD400] shadow-md">
+      {/* Main header — white */}
+      <div className="bg-white shadow-md border-b border-gray-100">
         <div className="container mx-auto px-4 py-3 flex items-center gap-4">
           {/* Mobile menu toggle */}
           <button
-            className="lg:hidden p-2 text-[#111111] hover:bg-black/10 rounded-lg transition"
+            className="lg:hidden p-2 text-[#0057FF] hover:bg-[#F4F8FF] rounded-lg transition"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
           >
@@ -38,12 +38,12 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0 group">
-            <div className="w-10 h-10 bg-[#111111] rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-md">
-              <span className="text-[#FFD400] font-black text-lg font-heading">S</span>
+            <div className="w-10 h-10 bg-[#FFD400] rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform shadow-md">
+              <span className="text-black font-black text-lg font-heading">S</span>
             </div>
             <div className="hidden sm:block leading-tight">
-              <span className="font-heading font-black text-[#111111] text-lg block leading-none">Socorro</span>
-              <span className="font-heading font-semibold text-[#111111]/60 text-xs block">dos Óculos</span>
+              <span className="font-heading font-black text-black text-lg block leading-none">Socorro</span>
+              <span className="font-heading font-semibold text-black/70 text-xs block">dos Óculos</span>
             </div>
           </Link>
 
@@ -52,39 +52,39 @@ export default function Header() {
             <input
               type="text"
               placeholder="Buscar óculos, serviços, consertos..."
-              className="w-full pl-4 md:pl-5 pr-12 md:pr-14 py-2.5 md:py-3 rounded-xl border-2 border-black/15 bg-white focus:outline-none focus:border-[#111111] transition font-medium placeholder:text-gray-400 shadow-sm text-sm"
+              className="w-full pl-4 md:pl-5 pr-12 md:pr-14 py-2.5 md:py-3 rounded-xl border-2 border-[#F4F8FF] bg-[#F4F8FF] focus:outline-none focus:border-[#0057FF] focus:bg-white transition font-medium placeholder:text-gray-400 text-sm text-[#0F172A]"
             />
-            <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#111111] text-[#FFD400] p-2 rounded-lg hover:bg-black transition hover:scale-105">
+            <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#0057FF] text-white p-2 rounded-lg hover:bg-[#0046CC] transition hover:scale-105">
               <Search className="w-4 h-4" />
             </button>
           </div>
 
           {/* Actions */}
           <div className="flex items-center gap-3 sm:gap-4 ml-auto">
-            <Link href="/contato" className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-[#111111] hover:opacity-60 transition">
+            <Link href="/contato" className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-[#0057FF] hover:text-[#0F172A] transition">
               <Phone className="w-4 h-4" />
               <span className="hidden xl:block">Atendimento</span>
             </Link>
-            <Link href="/minha-conta" className="flex items-center gap-1.5 text-sm font-bold text-[#111111] hover:opacity-60 transition">
+            <Link href="/minha-conta" className="flex items-center gap-1.5 text-sm font-bold text-[#0057FF] hover:text-[#0F172A] transition">
               <User className="w-5 h-5" />
               <span className="hidden xl:block">Conta</span>
             </Link>
-            <Link href="/carrinho" className="relative flex items-center gap-1.5 text-sm font-bold text-[#111111] hover:opacity-60 transition group">
+            <Link href="/carrinho" className="relative flex items-center gap-1.5 text-sm font-bold text-[#0057FF] hover:text-[#0F172A] transition group">
               <ShoppingCart className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              <span className="absolute -top-2 -right-2 bg-[#111111] text-[#FFD400] text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
+              <span className="absolute -top-2 -right-2 bg-[#FFD400] text-[#0F172A] text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
               <span className="hidden xl:block">Carrinho</span>
             </Link>
           </div>
         </div>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:block border-t-2 border-black/10">
+        <nav className="hidden lg:block border-t border-gray-100 bg-[#F4F8FF]">
           <ul className="container mx-auto px-4 flex items-center justify-center">
             {navLinks.map(([label, href]) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className="px-5 py-3 text-xs font-black text-[#111111] uppercase tracking-wider hover:bg-black/10 block transition"
+                  className="px-5 py-3 text-xs font-black text-[#0F172A] uppercase tracking-wider hover:text-[#0057FF] hover:bg-white block transition"
                 >
                   {label}
                 </Link>
@@ -93,7 +93,7 @@ export default function Header() {
             <li>
               <Link
                 href="/promocoes"
-                className="px-5 py-3 text-xs font-black bg-[#111111] text-[#FFD400] uppercase tracking-wider hover:bg-black block transition"
+                className="px-5 py-3 text-xs font-black bg-[#FFD400] text-[#0F172A] uppercase tracking-wider hover:bg-yellow-300 block transition"
               >
                 🔥 Promoções
               </Link>
@@ -104,7 +104,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-[#111111] text-white border-t border-white/10 shadow-xl">
+        <div className="lg:hidden bg-[#0F172A] text-white border-t border-white/10 shadow-xl">
           <div className="container mx-auto px-4 py-4">
             <div className="relative mb-4">
               <input

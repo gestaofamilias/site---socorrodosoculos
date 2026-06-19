@@ -59,11 +59,11 @@ export default function CategorySection() {
   }, []);
 
   return (
-    <section className="py-16 bg-[#111111]">
+    <section className="py-16 bg-[#F4F8FF]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-[#FFD400] text-xs font-black uppercase tracking-widest mb-2 block">Navegue por categoria</span>
-          <h2 className="font-heading text-3xl md:text-4xl font-black text-white">Compre por Categoria</h2>
+          <span className="text-[#0057FF] text-xs font-black uppercase tracking-widest mb-2 block">Navegue por categoria</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-black text-[#0F172A]">Compre por Categoria</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -71,7 +71,7 @@ export default function CategorySection() {
             <Link
               key={index}
               href={category.link}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-[#FFD400]/10 transition-all duration-300 hover:-translate-y-2"
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-[#0057FF]/15 transition-all duration-300 hover:-translate-y-2"
             >
               <div className="relative h-56 w-full overflow-hidden">
                 <Image
@@ -82,14 +82,14 @@ export default function CategorySection() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0057FF]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <div className="p-5 border-t-2 border-transparent group-hover:border-[#FFD400] transition-colors duration-300">
-                <h3 className="font-heading font-black text-[#111111] text-lg mb-0.5">{category.title}</h3>
+              <div className="p-5 border-t-2 border-transparent group-hover:border-[#0057FF] transition-colors duration-300">
+                <h3 className="font-heading font-black text-[#0F172A] text-lg mb-0.5">{category.title}</h3>
                 {category.desc && (
                   <p className="text-gray-500 text-sm mb-3">{category.desc}</p>
                 )}
-                <span className="inline-flex items-center gap-1 text-xs font-bold text-[#111111] group-hover:text-[#FFD400] transition-colors duration-200">
+                <span className="inline-flex items-center gap-1 text-xs font-bold text-[#0057FF] group-hover:text-[#0F172A] transition-colors duration-200">
                   Ver produtos <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>

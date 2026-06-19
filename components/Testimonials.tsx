@@ -26,12 +26,12 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-[#111111]">
+    <section className="py-20 bg-[#F4F8FF]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
-          <span className="text-[#FFD400] text-xs font-black uppercase tracking-widest mb-2 block">Avaliações reais</span>
-          <h2 className="font-heading text-3xl md:text-4xl font-black text-white mb-3">O que nossos clientes dizem</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm leading-relaxed">
+          <span className="text-[#0057FF] text-xs font-black uppercase tracking-widest mb-2 block">Avaliações reais</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-black text-[#0F172A] mb-3">O que nossos clientes dizem</h2>
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm leading-relaxed">
             A satisfação dos nossos clientes é a nossa maior prioridade.
           </p>
         </div>
@@ -40,28 +40,28 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white/5 border border-white/10 p-8 rounded-2xl relative hover:border-[#FFD400]/30 hover:bg-white/8 transition-all duration-300 hover:-translate-y-1"
+              className="bg-white border border-gray-100 shadow-sm p-8 rounded-2xl relative hover:shadow-xl hover:shadow-[#0057FF]/10 hover:-translate-y-1 transition-all duration-300"
             >
-              <Quote className="w-8 h-8 text-[#FFD400]/30 mb-4" />
+              <Quote className="w-8 h-8 text-[#0057FF]/20 mb-4" />
 
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className={`w-4 h-4 ${i < testimonial.rating ? 'text-[#FFD400] fill-[#FFD400]' : 'text-gray-600'}`}
+                    className={`w-4 h-4 ${i < testimonial.rating ? 'text-[#FFD400] fill-[#FFD400]' : 'text-gray-200'}`}
                   />
                 ))}
               </div>
 
-              <p className="text-gray-300 mb-8 leading-relaxed text-sm italic">&quot;{testimonial.content}&quot;</p>
+              <p className="text-gray-600 mb-8 leading-relaxed text-sm italic">&quot;{testimonial.content}&quot;</p>
 
               <div className="flex items-center gap-3 mt-auto">
                 <div className="w-10 h-10 rounded-full bg-[#FFD400] flex items-center justify-center flex-shrink-0">
-                  <span className="font-black text-[#111111] text-sm">{testimonial.initial}</span>
+                  <span className="font-black text-[#0F172A] text-sm">{testimonial.initial}</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-white text-sm">{testimonial.name}</h4>
-                  <span className="text-xs text-gray-500">{testimonial.role}</span>
+                  <h4 className="font-bold text-[#0057FF] text-sm">{testimonial.name}</h4>
+                  <span className="text-xs text-gray-400">{testimonial.role}</span>
                 </div>
               </div>
             </div>
@@ -74,12 +74,12 @@ export default function Testimonials() {
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-[#111111] fill-[#111111]" />
+                  <Star key={i} className="w-5 h-5 text-[#0F172A] fill-[#0F172A]" />
                 ))}
               </div>
-              <span className="font-black text-[#111111] text-lg">4.9</span>
+              <span className="font-black text-[#0F172A] text-lg">4.9</span>
             </div>
-            <span className="text-[#111111]/60 font-semibold text-sm text-center">— Avaliação média de +500 clientes</span>
+            <span className="text-[#0F172A]/60 font-semibold text-sm text-center">— Avaliação média de +500 clientes</span>
           </div>
         </div>
       </div>
