@@ -2,12 +2,31 @@
 
 import Link from 'next/link';
 import { Facebook, Instagram, Youtube, MapPin, Phone, Mail, Lock, Building2, CheckCircle2 } from 'lucide-react';
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
+import { supabase } from '@/lib/supabase';
+
+const DEFAULT_DESCRICAO = 'Sua ótica de confiança. Especialistas em conserto, manutenção e venda de óculos de grau, sol e lentes de contato.';
+const DEFAULT_ENDERECO = 'Rua Dona Izabel A Redentora, 1984 — Centro, São José dos Pinhais - PR';
 
 export default function Footer() {
   const [consent, setConsent] = useState(false);
   const [consentError, setConsentError] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
+  const [descricao, setDescricao] = useState(DEFAULT_DESCRICAO);
+  const [endereco, setEndereco] = useState(DEFAULT_ENDERECO);
+
+  useEffect(() => {
+    supabase
+      .from('site_content')
+      .select('key, value')
+      .in('key', ['footer_descricao', 'footer_endereco'])
+      .then(({ data }) => {
+        const desc = data?.find((r) => r.key === 'footer_descricao')?.value;
+        const end = data?.find((r) => r.key === 'footer_endereco')?.value;
+        if (desc) setDescricao(desc);
+        if (end) setEndereco(end);
+      });
+  }, []);
 
   const handleNewsletterSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,7 +55,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-              Sua ótica de confiança. Especialistas em conserto, manutenção e venda de óculos de grau, sol e lentes de contato.
+              {descricao}
             </p>
 
             <div className="flex items-start gap-3 mb-6 p-3 rounded-xl bg-[#1A1A1A] border border-white/5">
@@ -51,7 +70,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm text-gray-400">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#FFD400] flex-shrink-0 mt-0.5" />
-                <span>Rua Dona Izabel A Redentora, 1984 — Centro, São José dos Pinhais - PR</span>
+                <span>{endereco}</span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#FFD400] flex-shrink-0 mt-0.5" />

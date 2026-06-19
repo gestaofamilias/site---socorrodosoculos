@@ -2,13 +2,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { CheckCircle2, Users, Award, Heart, MessageCircle, ArrowRight, Target, Eye, MapPinned, Star } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 export const metadata: Metadata = {
   title: 'Sobre a Empresa | Socorro dos Óculos',
   description: 'Conheça a história, missão, visão e valores da Socorro dos Óculos — mais de 23 anos especializados em conserto e venda de óculos.',
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const { data } = await supabase
+    .from('site_content')
+    .select('key, value')
+    .in('key', ['sobre_titulo', 'sobre_texto']);
+
+  const sobreTitulo = data?.find((r) => r.key === 'sobre_titulo')?.value || 'Nossa História';
+  const sobreTexto = data?.find((r) => r.key === 'sobre_texto')?.value ||
+    'A Socorro do Óculos nasceu com a missão de democratizar o acesso à saúde ocular, oferecendo produtos de alta qualidade com preços justos e atendimento humanizado.';
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -23,9 +33,9 @@ export default function AboutPage() {
           />
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-brand-yellow">Nossa História</h1>
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-brand-yellow">{sobreTitulo}</h1>
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-            A Socorro do Óculos nasceu com a missão de democratizar o acesso à saúde ocular, oferecendo produtos de alta qualidade com preços justos e atendimento humanizado.
+            {sobreTexto}
           </p>
         </div>
       </section>

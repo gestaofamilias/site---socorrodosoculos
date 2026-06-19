@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 const defaultCategories = [
   {
@@ -36,26 +37,22 @@ export default function CategorySection() {
   const [categories, setCategories] = useState(defaultCategories);
 
   useEffect(() => {
-    const savedCategories = localStorage.getItem('site_categories');
-    if (savedCategories) {
-      const parsed = JSON.parse(savedCategories);
-      const mapped = parsed.map((cat: any) => {
-        let img = cat.image || defaultCategories[0].image;
-        if (img.includes('loremflickr.com') || img.includes('1620052302324')) {
-          if (cat.slug === 'oculos-de-sol') img = defaultCategories[0].image;
-          else if (cat.slug === 'oculos-de-grau') img = defaultCategories[1].image;
-          else if (cat.slug === 'lentes-de-contato') img = defaultCategories[2].image;
-          else if (cat.slug === 'armacoes') img = defaultCategories[3].image;
+    supabase
+      .from('categories')
+      .select('name, slug, image_url')
+      .order('sort_order')
+      .then(({ data }) => {
+        if (data && data.length > 0) {
+          setCategories(
+            data.map((cat) => ({
+              title: cat.name,
+              image: cat.image_url || defaultCategories[0].image,
+              link: `/categoria/${cat.slug}`,
+              desc: '',
+            }))
+          );
         }
-        return {
-          title: cat.name,
-          image: img,
-          link: `/categoria/${cat.slug}`,
-          desc: '',
-        };
       });
-      setCategories(mapped);
-    }
   }, []);
 
   return (

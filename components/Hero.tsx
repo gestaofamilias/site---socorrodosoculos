@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { ArrowRight, Wrench, Eye, Sparkles, CheckCircle, Zap } from 'lucide-react';
 import CrackedText from './CrackedText';
+import { supabase } from '@/lib/supabase';
 
 const services = [
   { icon: Wrench, title: 'Conserto & Solda', desc: 'Armações e hastes' },
@@ -12,6 +14,19 @@ const services = [
 ];
 
 export default function Hero() {
+  const [posterImage, setPosterImage] = useState('/hero-bg.png');
+
+  useEffect(() => {
+    supabase
+      .from('site_content')
+      .select('value')
+      .eq('key', 'hero_banner_image')
+      .maybeSingle()
+      .then(({ data }) => {
+        if (data?.value) setPosterImage(data.value);
+      });
+  }, []);
+
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-[#111111] via-[#1A1A1A] to-[#111111]">
       {/* Video background */}
@@ -20,7 +35,7 @@ export default function Hero() {
         loop
         muted
         playsInline
-        poster="/hero-bg.png"
+        poster={posterImage}
         className="absolute inset-0 w-full h-full object-cover opacity-30"
       >
         <source src="/hero-video.mp4" type="video/mp4" />

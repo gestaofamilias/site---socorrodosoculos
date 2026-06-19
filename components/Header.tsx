@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Search, ShoppingCart, User, Menu, Phone, X } from 'lucide-react';
+import { Search, ShoppingCart, Menu, Phone, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -100,10 +100,6 @@ export default function Header() {
             <Link href="/contato" className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-white hover:text-[#FFD400] transition">
               <Phone className="w-4 h-4" />
               <span className="hidden xl:block">Atendimento</span>
-            </Link>
-            <Link href="/minha-conta" className="flex items-center gap-1.5 text-sm font-bold text-white hover:text-[#FFD400] transition">
-              <User className="w-5 h-5" />
-              <span className="hidden xl:block">Conta</span>
             </Link>
             <Link href="/carrinho" className="relative flex items-center gap-1.5 text-sm font-bold text-white hover:text-[#FFD400] transition group">
               <ShoppingCart className="w-5 h-5 group-hover:scale-110 transition-transform" />

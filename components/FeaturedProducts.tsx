@@ -1,6 +1,10 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import ProductCard, { Product } from './ProductCard';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 const mockProducts: Product[] = [
   {
@@ -42,6 +46,31 @@ const mockProducts: Product[] = [
 ];
 
 export default function FeaturedProducts() {
+  const [products, setProducts] = useState<Product[]>(mockProducts);
+
+  useEffect(() => {
+    supabase
+      .from('products')
+      .select('id, name, slug, price, installments, rating, image_url')
+      .order('created_at', { ascending: false })
+      .limit(4)
+      .then(({ data }) => {
+        if (data && data.length > 0) {
+          setProducts(
+            data.map((p) => ({
+              id: p.id,
+              name: p.name,
+              slug: p.slug,
+              price: p.price,
+              installments: p.installments,
+              rating: p.rating,
+              image: p.image_url || mockProducts[0].image,
+            }))
+          );
+        }
+      });
+  }, []);
+
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -59,7 +88,7 @@ export default function FeaturedProducts() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {mockProducts.map((product) => (
+          {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
