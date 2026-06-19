@@ -6,6 +6,7 @@ import PriceRanges from '@/components/PriceRanges';
 import PromoBanner from '@/components/PromoBanner';
 import Testimonials from '@/components/Testimonials';
 import StoreLocations from '@/components/StoreLocations';
+import TrustSection from '@/components/TrustSection';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <PromoBanner />
       <Testimonials />
       <StoreLocations />
+      <TrustSection />
     </>
   );
 }

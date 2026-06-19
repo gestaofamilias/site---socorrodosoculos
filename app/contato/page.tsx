@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 
 export default function ContactPage() {
@@ -23,8 +24,10 @@ export default function ContactPage() {
                     <MapPin className="w-6 h-6 text-brand-black" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-brand-black mb-1">Endereço</h3>
-                    <p className="text-gray-600">Rua Dona Izabel A Redentora, 1984 - Centro<br />São José dos Pinhais - PR, 83005-010</p>
+                    <h3 className="font-bold text-brand-black mb-1">Nossas Unidades</h3>
+                    <p className="text-gray-600 mb-2">Rua Dona Izabel A Redentora, 1984 - Centro<br />São José dos Pinhais - PR, 83005-010</p>
+                    <p className="text-gray-600 mb-2">Av. Vitório do Amaral, 1200 - Centro<br />Araucária - PR</p>
+                    <p className="text-gray-600">Av. Nereu Ramos, 850 - Centro<br />Itapema - SC</p>
                   </div>
                 </div>
 
@@ -60,18 +63,33 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-8 pt-8 border-t border-gray-100">
-                <a href="#" className="w-full bg-green-500 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-green-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 active:scale-95">
+                <a
+                  href="https://wa.me/5541933852179?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20conserto%20de%20%C3%B3culos."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-green-500 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-green-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 active:scale-95"
+                >
                   <MessageCircle className="w-6 h-6" />
                   Falar no WhatsApp
                 </a>
+                <p className="text-gray-400 text-xs text-center mt-3">
+                  Ao entrar em contato pelo WhatsApp você concorda com o tratamento dos dados informados conforme nossa{' '}
+                  <Link href="/politica-de-privacidade" className="underline hover:text-brand-yellow">Política de Privacidade</Link>.
+                </p>
               </div>
             </div>
 
-            {/* Google Maps Placeholder */}
-            <div className="h-64 bg-gray-200 rounded-2xl overflow-hidden border border-gray-100 relative">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-medium">
-                [Google Maps Integration]
-              </div>
+            {/* Google Maps */}
+            <div className="h-64 rounded-2xl overflow-hidden border border-gray-100">
+              <iframe
+                title="Localização Socorro dos Óculos - São José dos Pinhais"
+                src="https://www.google.com/maps?q=Rua+Dona+Izabel+A+Redentora,+1984,+S%C3%A3o+Jos%C3%A9+dos+Pinhais+-+PR&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 

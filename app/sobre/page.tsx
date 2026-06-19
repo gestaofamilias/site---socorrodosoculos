@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { CheckCircle2, Users, Award, Heart, MessageCircle, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
+import { CheckCircle2, Users, Award, Heart, MessageCircle, ArrowRight, Target, Eye, MapPinned, Star } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Sobre a Empresa | Socorro dos Óculos',
+  description: 'Conheça a história, missão, visão e valores da Socorro dos Óculos — mais de 23 anos especializados em conserto e venda de óculos.',
+};
 
 export default function AboutPage() {
   return (
@@ -55,6 +61,54 @@ export default function AboutPage() {
                 <p className="text-brand-black font-medium">de experiência no mercado</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission, Vision & Stats */}
+      <section className="py-20 bg-brand-black relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.05]"
+          style={{ backgroundImage: 'radial-gradient(circle, #FFD400 1px, transparent 1px)', backgroundSize: '28px 28px' }}
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-brand-yellow/30 transition-colors duration-300">
+              <div className="w-14 h-14 bg-brand-yellow/10 rounded-2xl flex items-center justify-center mb-6">
+                <Target className="w-7 h-7 text-brand-yellow" />
+              </div>
+              <h3 className="font-heading font-black text-2xl text-white mb-3">Nossa Missão</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Democratizar o acesso à saúde ocular, oferecendo conserto, manutenção e venda de óculos com qualidade,
+                agilidade e preço justo, cuidando de cada cliente como se fosse da família.
+              </p>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-brand-yellow/30 transition-colors duration-300">
+              <div className="w-14 h-14 bg-brand-yellow/10 rounded-2xl flex items-center justify-center mb-6">
+                <Eye className="w-7 h-7 text-brand-yellow" />
+              </div>
+              <h3 className="font-heading font-black text-2xl text-white mb-3">Nossa Visão</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Ser a referência nacional em conserto e manutenção de óculos, reconhecida pela confiança, tecnologia
+                e excelência no atendimento em cada unidade que abrimos pelo Brasil.
+              </p>
+            </div>
+          </div>
+
+          {/* Stats strip */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {[
+              { icon: Users, value: '+50.000', label: 'Clientes Atendidos' },
+              { icon: Award, value: '+23 Anos', label: 'De Mercado' },
+              { icon: MapPinned, value: '3', label: 'Unidades pelo Brasil' },
+              { icon: Star, value: '4.9', label: 'Avaliação Média' },
+            ].map(({ icon: Icon, value, label }) => (
+              <div key={label}>
+                <Icon className="w-7 h-7 text-brand-yellow mx-auto mb-3" />
+                <p className="font-heading font-black text-2xl md:text-3xl text-white mb-1">{value}</p>
+                <p className="text-gray-500 text-xs md:text-sm">{label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -144,6 +198,10 @@ export default function AboutPage() {
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
+          <p className="text-gray-500 text-xs text-center mt-6">
+            Ao entrar em contato pelo WhatsApp você concorda com o tratamento dos dados informados conforme nossa{' '}
+            <Link href="/politica-de-privacidade" className="underline hover:text-brand-yellow">Política de Privacidade</Link>.
+          </p>
         </div>
       </section>
     </div>

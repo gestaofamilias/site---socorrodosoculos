@@ -1,7 +1,24 @@
+'use client';
+
 import Link from 'next/link';
-import { Facebook, Instagram, Youtube, MapPin, Phone, Mail, Lock } from 'lucide-react';
+import { Facebook, Instagram, Youtube, MapPin, Phone, Mail, Lock, Building2, CheckCircle2 } from 'lucide-react';
+import { useState, FormEvent } from 'react';
 
 export default function Footer() {
+  const [consent, setConsent] = useState(false);
+  const [consentError, setConsentError] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleNewsletterSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!consent) {
+      setConsentError(true);
+      return;
+    }
+    setConsentError(false);
+    setSubscribed(true);
+  };
+
   return (
     <footer className="bg-[#111111] pt-16 pb-8 mt-auto border-t border-[#FFD400]/10">
       <div className="container mx-auto px-4">
@@ -18,9 +35,19 @@ export default function Footer() {
                 <span className="font-heading font-semibold text-[#FFD400] text-xs block">dos Óculos</span>
               </div>
             </Link>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+            <p className="text-gray-400 text-sm mb-4 leading-relaxed">
               Sua ótica de confiança. Especialistas em conserto, manutenção e venda de óculos de grau, sol e lentes de contato.
             </p>
+
+            <div className="flex items-start gap-3 mb-6 p-3 rounded-xl bg-[#1A1A1A] border border-white/5">
+              <Building2 className="w-4 h-4 text-[#FFD400] flex-shrink-0 mt-0.5" />
+              <div className="text-xs text-gray-500 leading-relaxed">
+                <p className="text-gray-300 font-semibold">SOCORRO DOS ÓCULOS LTDA</p>
+                <p>CNPJ: 12.345.678/0001-90</p>
+                <p>Seg a Sáb: 09h às 18h</p>
+              </div>
+            </div>
+
             <div className="space-y-3 text-sm text-gray-400">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#FFD400] flex-shrink-0 mt-0.5" />
@@ -80,6 +107,7 @@ export default function Footer() {
               {[
                 ['Fale Conosco', '/contato'],
                 ['Política de Privacidade', '/politica-de-privacidade'],
+                ['Termos de Uso', '/termos-de-uso'],
                 ['Trocas e Devoluções', '/trocas-e-devolucoes'],
                 ['Prazos de Entrega', '/prazos-de-entrega'],
                 ['Dúvidas Frequentes', '/faq'],
@@ -99,19 +127,48 @@ export default function Footer() {
             <p className="text-gray-400 text-sm mb-4 leading-relaxed">
               Receba promoções e novidades exclusivas no seu e-mail.
             </p>
-            <form className="flex flex-col gap-3 mb-8">
-              <input
-                type="email"
-                placeholder="Seu melhor e-mail"
-                className="w-full px-4 py-3 rounded-xl bg-[#1A1A1A] border border-white/10 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#FFD400] transition text-sm"
-              />
-              <button
-                type="submit"
-                className="w-full bg-[#FFD400] text-[#111111] font-black py-3 rounded-xl hover:bg-[#FFC107] hover:shadow-[0_0_20px_rgba(255,212,0,0.35)] transition-all duration-200 hover:scale-[1.02] text-sm"
-              >
-                Cadastrar
-              </button>
-            </form>
+            {subscribed ? (
+              <div className="flex items-center gap-2 text-sm text-[#FFD400] bg-[#1A1A1A] border border-[#FFD400]/20 rounded-xl px-4 py-3 mb-8">
+                <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+                Cadastro realizado com sucesso!
+              </div>
+            ) : (
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-3 mb-8">
+                <input
+                  type="email"
+                  required
+                  placeholder="Seu melhor e-mail"
+                  className="w-full px-4 py-3 rounded-xl bg-[#1A1A1A] border border-white/10 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#FFD400] transition text-sm"
+                />
+                <label className="flex items-start gap-2 text-xs text-gray-400 leading-relaxed cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => {
+                      setConsent(e.target.checked);
+                      if (e.target.checked) setConsentError(false);
+                    }}
+                    className="mt-0.5 w-4 h-4 accent-[#FFD400] flex-shrink-0"
+                  />
+                  <span>
+                    Li e concordo com a{' '}
+                    <Link href="/politica-de-privacidade" className="text-[#FFD400] underline hover:text-[#FFC107]">
+                      Política de Privacidade
+                    </Link>{' '}
+                    e autorizo o recebimento de comunicações promocionais.
+                  </span>
+                </label>
+                {consentError && (
+                  <p className="text-red-400 text-xs">Você precisa aceitar a Política de Privacidade para se cadastrar.</p>
+                )}
+                <button
+                  type="submit"
+                  className="w-full bg-[#FFD400] text-[#111111] font-black py-3 rounded-xl hover:bg-[#FFC107] hover:shadow-[0_0_20px_rgba(255,212,0,0.35)] transition-all duration-200 hover:scale-[1.02] text-sm"
+                >
+                  Cadastrar
+                </button>
+              </form>
+            )}
 
             <div className="flex items-center gap-3">
               {[

@@ -88,6 +88,11 @@ export default function Hero() {
                 Ver Produtos
               </Link>
             </div>
+
+            <p className="text-gray-500 text-xs mt-4 max-w-lg mx-auto lg:mx-0">
+              Ao solicitar orçamento, você concorda com o tratamento dos seus dados conforme nossa{' '}
+              <Link href="/politica-de-privacidade" className="underline hover:text-[#FFD400]">Política de Privacidade</Link>.
+            </p>
           </div>
 
           {/* Right: Service cards + stats */}
