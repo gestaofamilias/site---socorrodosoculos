@@ -191,20 +191,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-center gap-4 text-sm text-gray-500">
           <div className="flex items-center gap-4">
             <p>© {new Date().getFullYear()} Socorro dos Óculos. Todos os direitos reservados.</p>
             <Link href="/admin" className="flex items-center gap-1 text-gray-600 hover:text-[#FFD400] transition-colors" title="Área Administrativa">
               <Lock className="w-3 h-3" />
               <span className="hidden sm:inline">Admin</span>
             </Link>
-          </div>
-          <div className="flex items-center gap-3">
-            {['PIX', 'Visa', 'MC', 'Boleto'].map((method) => (
-              <div key={method} className="h-7 px-3 bg-[#1A1A1A] border border-white/10 rounded-md flex items-center justify-center text-gray-400 text-xs font-bold">
-                {method}
-              </div>
-            ))}
           </div>
         </div>
       </div>
